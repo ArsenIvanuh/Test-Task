@@ -1,7 +1,12 @@
 
 {{ 'new-best-sellers-section.css' | asset_url | stylesheet_tag }}
 
-
+<div class="new-best-sellers-section">
+  <div class="section-heading">
+    <h3>{{ section.settings.heading-title }}</h3>
+    <a href="{{ section.settings.link }}"></a>
+  </div>
+</div>
 
 {% schema %}
     {
