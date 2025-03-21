@@ -1,0 +1,44 @@
+.new-best-sellers-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-heading {
+    max-width: 1664px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    padding: 0px 15px;
+}
+
+.section-heading h3 {
+    font-size: 40px;
+    font-family: Source Serif Pro;
+    font-weight: 900;
+    line-height: 120%;
+    margin: 0px;
+}
+
+.section-heading a {
+    padding: 21px 30px;
+    text-decoration: none;
+    display: flex;
+    gap: 10px;
+    font-family: Poppins;
+    font-size: 14px;
+    line-height: 140%;
+    letter-spacing: 3%;
+    color: #5C553A;
+    align-items: center;
+}
+
+
+
+
+

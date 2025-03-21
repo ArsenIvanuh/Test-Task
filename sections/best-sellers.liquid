@@ -1,67 +1,74 @@
-
 {{ 'new-best-sellers-section.css' | asset_url | stylesheet_tag }}
 
 <div class="new-best-sellers-section">
   <div class="section-heading">
     <h3>{{ section.settings.heading_title }}</h3>
-    <a href="{{ section.settings.link }}">{{ section.settings.link_text }}</a>
+    <a href="{{ section.settings.link }}">
+      {{ section.settings.link_text }}
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none">
+        <path d="M1.33334 6H14.6667M14.6667 6L9.66668 1M14.6667 6L9.66668 11" stroke="#5C553A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+  <div class="section-body">
+    <div class="products-list"></div>
+    <div class="croll-bar"></div>
   </div>
 </div>
 
 {% schema %}
+{
+  "name": "New Best Sellers",
+  "class": "new-best-sellers",
+  "settings": [
     {
-      "name": "New Best Sellers",
-      "class": "new-best-sellers",
-      "settings": [
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading_title",
+      "label": "Heading Title",
+      "default": "Best Sellers"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link",
+      "default": "/"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text",
+      "default": "Shop All Best Sellers"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment",
+      "label": "Vertical alignment",
+      "options": [
         {
-            "type": "header",
-            "content": "Heading"
-        },
-        {
-            "type": "text",
-            "id": "heading_title",
-            "label": "Heading Title",
-            "default": "Best Sellers"
-        },
-        {
-            "type": "url",
-            "id": "link",
-            "label": "Link",
-            "default":"/"
-        },
-        {
-          "type": "text",
-          "id": "link_text",
-          "label": "Link Text",
-          "default": "Shop All Best Sellers"
-        },
-        {
-            "type": "select",
-            "id": "vertical_alignment",
-            "label": "Vertical alignment",
-            "options": [
-                {
-                "value": "right_arrow",
-                "label": "Right Arrow"
-                }
-            ],
-            "default": "right_arrow"
-        },
-        {
-            "type": "header",
-            "content": "Content"
-        },
-        {
-            "type": "collection",
-            "id": "collection",
-            "label": "Collection"
+          "value": "right_arrow",
+          "label": "Right Arrow"
         }
       ],
-      "presets": [
-        {
-          "name": "New Best Sellers",
-        }
-      ]
+      "default": "right_arrow"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "collection",
+      "id": "collection",
+      "label": "Collection"
     }
-    {% endschema %}
-    
+  ],
+  "presets": [
+    {
+      "name": "New Best Sellers"
+    }
+  ]
+}
+{% endschema %}
