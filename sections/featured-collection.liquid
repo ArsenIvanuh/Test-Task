@@ -211,15 +211,15 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const showMoreButton = document.querySelector('#shopify-section-{{ section.id }} .es-show-more');
-    const sliders = document.querySelectorAll('#shopify-section-{{ section.id }} slider-component .grid__item');
+    const readMoreB = document.querySelector('.es-show-more');
+    const Gallery = document.querySelectorAll('slider-component .grid__item');
 
-    showMoreButton.addEventListener('click', function() {
-      sliders?.forEach(slider => {
+    readMoreB.addEventListener('click', function() {
+      Gallery?.forEach(slider => {
         slider.classList.remove('small-hide');
       });
 
-      showMoreButton.style.display = 'none';
+      readMoreB.style.display = 'none';
     });
   });
 </script>
