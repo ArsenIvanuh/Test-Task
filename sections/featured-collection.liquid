@@ -178,7 +178,7 @@
           </button>
           <div class="slider-counter caption">
             <div class="slideshow__control-wrapper">
-              {%- assign new_offset = section.settings.columns_desktop | plus: 1 -%}
+              {%- assign new_offset = section.settings.columns_desktop |  minus: 1 -%}
               {%- for product in section.settings.collection.products limit: section.settings.products_to_show offset: new_offset -%}
                 <button class="slider-counter__link slider-counter__link--dots link" aria-label="Load {{ forloop.index }} of {{ forloop.length }}" aria-controls="Slider-{{ section.id }}">
                   <span class="dot"></span>
