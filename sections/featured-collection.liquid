@@ -72,6 +72,14 @@
           {{ section.settings.title }}
         </h2>
       {%- endif -%}
+      {% if section.settings.link != blank and section.settings.link_text != blank %}
+        <a class="shop-link" href="{{ section.settings.link }}">
+          {{ section.settings.link_text }}
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12" viewBox="0 0 16 12" fill="none">
+            <path d="M1.33334 6H14.6667M14.6667 6L9.66668 1M14.6667 6L9.66668 11" stroke="#5C553A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      {% endif %}
       {%- if section.settings.description != blank
         or section.settings.show_description
         and section.settings.collection.description != empty
@@ -247,6 +255,17 @@
       "default": 4,
       "label": "t:sections.featured-collection.settings.products_to_show.label"
     },     
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text" ,
+      "default": "Shop All Best Sellers"
+    },
     {
       "type": "header",
       "content": "t:sections.featured-collection.settings.header_text.content"
